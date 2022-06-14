@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load escola_tags %}
+
+{% block title %}
+{% if estilo %}
+{{ estilo.name }}
+{% else %}
+Escolas
+{% endif %}
+{% endblock title %}
+
+{% block content %}
+
+    {% for escola in escola_list %}
+        <div class="container-fluid">
+
+                <div class="row border border-gray-900">
+                    <div class="col-3 mb-3 mb-lg-0">
+                        <a href="{{ escola.get_absolute_url }}">
+                            {% if escola.image %}
+                            <img class="img-fluid rounded float-left" src="/media/{{escola.image}}" alt="">
+                            {% else %}
+                            <img class="img-fluid rounded float-left" src="{% static 'images/no_image.jpg' %}" alt="">
+                            {% endif %}
+                        </a>
+                    </div>
+                    <div class="col-9">
+                        <a class="text-decoration-none text-dark" href="{{ escola.get_absolute_url }}">
+                            <h5 class="md:text-5xl text-4xl font-semibold mb-4">{{ escola.name }}</h5>
+                        </a>
+                        <a class="text-decoration-none text-dark">
+                            <p class="md:text-xl text-lg">Fundação: {{ escola.fundacao }}</p>
+                        </a>
+                    </div>
+                </div>
+
+        </div>
+    {% endfor %}        
+
+
+
+<footer class=" px-5 py-10 ">
+    <ul class="flex justify-between items-center">
+
+        <li>&copy; 2022</li>
+        <li> Feito com Python (Django)</li>
+        <li>M4N3</li>
+    </ul>
+</footer>
+
+{% endblock content %}

@@ -1,0 +1,5 @@
+criando Graduacoes...
+criar alunos  // apps - settings - models - views - urls
+criar instrutores  // apps - settings - models - views - urls
+criar responsáveis  // apps - settings - models - views - urls
+criar endereços  // apps - settings - models - views - urls

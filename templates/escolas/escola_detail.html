@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ escola.name }}{% endblock title %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+            {% if escola.image %}
+            <img class="container-fluid" src="/media/{{escola.image}}" alt="">
+            {% else %}
+            <img class="container-fluid" src="{% static 'images/no_image.jpg' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="col-lg-9">
+            <h1 class="font-weight-bold">{{ escola.name }}</h1>
+            <h2>{{ escola.fundacao }}</h2>
+            <p>{{ escola.description }}</p>
+            <p>
+                Voltar para Estilos
+                <a class="text-decoration-none" href="{{ escola.estilo.get_absolute_url }}">
+                    {{ escola.estilo.name }}
+                </a>
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

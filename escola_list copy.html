@@ -1,0 +1,91 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load escola_tags %}
+
+{% block title %}
+{% if estilo %}
+{{ estilo.name }}
+{% else %}
+Escolas
+{% endif %}
+{% endblock title %}
+
+{% block content %}
+
+<header class="min-h-screen bg-black bg-opacity-75 bg-blend-overlay showcase border-gray-600 border-b-8 flex justify-center items-center bg-no-repeat"  style="background-image: url('{% static 'images/background_netflix.jpg' %}');">
+    <div class="z-10 h-full py-32 md:py-0 text-gray-100 text-center flex items-center flex-col">
+
+        <h1 class="font-semibold text-4xl md:text-5xl w-10/12 md:w-3/4 text-center">
+            Filmes e séries da Hashtag, tudo em um só lugar.
+        </h1>
+        <h3 class="text-xl md:text-xl py-5">
+            Assista onde quiser. Cancele quando quiser.
+        </h3>
+        <h4 class="text-sm md:text-lg pb-3">
+            Quer começar? Coloque seu e-mail abaixo para acessar.
+        </h4>
+    </div>
+</header>
+
+
+<div class="container my-3">
+    <div class="row">
+        <div class="col-lg-3">
+            <ul class="list-group mb-3 mb-lg-0">
+                <a class="text-decoration-none list-group-item list-group-item-light {% if not estilo %}active{% endif %}"
+                    href="{% url 'escolas:list' %}">
+                    Escolas
+                </a>
+
+                {% for est in estilos %}
+                <a class="text-decoration-none list-group-item list-group-item-light {% if estilo == est %}active{% endif %}"
+                    href="{{ est.get_absolute_url }}">
+                    {{ est.name }}
+                </a>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="col-lg-9">
+            <div class="card-deck mb-3">
+                {% for escola in escola_list %}
+                <div class="card">
+                    <a href="{{ escola.get_absolute_url }}">
+                        {% if escola.image %}
+                        <img class="img-thumbnail" src="/media/{{escola.image}}" alt="">
+                        {% else %}
+                        <img class="card-img-top" src="{% static 'images/no_image.jpg' %}" alt="">
+                        {% endif %}
+                    </a>
+
+                    <div class="card-body d-flex flex-column justify-content-between">
+                        <a class="text-decoration-none text-dark" href="{{ escola.get_absolute_url }}">
+                            <h5 class="card-title">{{ escola.name }}</h5>
+                        </a>
+                        <a class="text-decoration-none text-dark" href="{{ escola.get_absolute_url }}">
+                            <p class="card-text font-weight-bold">Fundação: {{ escola.fundacao }}</p>
+                        </a>
+                    </div>
+                </div>
+                {% if forloop.counter|divisibleby:"3" and not forloop.last %}
+            </div>
+            <div class="card-deck mb-3">
+                {% endif %}
+                {% endfor %}
+
+                {% if escola_list|length|remainder == 2 %}
+                <div class="card border-0"></div>
+                {% elif escola_list|length|remainder == 1 %}
+                <div class="card border-0"></div>
+                <div class="card border-0"></div>
+                {% endif %}
+            </div>
+
+            {% if is_paginated %}
+            {% include "pagination.html" with page=page_obj %}
+            {% endif %}
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

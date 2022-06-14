@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}{{ faixa.name }}{% endblock title %}
+
+{% block content %}
+
+<div class="container my-3">
+    <div class="row border border-gray-900">
+        <div class="col-lg-3 mb-3 mb-lg-0">
+            {% if faixa.cor_faixa %}
+            <center>
+                <img class="rounded-circle" src="/media/{{faixa.cor_faixa}}" width="180" alt="">
+            </center>
+            {% else %}
+            <img class="container-fluid" src="{% static 'images/no_image.jpg' %}" alt="">
+            {% endif %}
+        </div>
+        <div class="col-lg-9">
+            <h1 class="font-weight-bold">{{ faixa.name }}</h1>
+            <h2>{{ faixa.nivel }}</h2>
+        </div>
+    </div>
+</div>
+
+{% endblock content %}

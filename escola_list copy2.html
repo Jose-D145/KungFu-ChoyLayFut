@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% load escola_tags %}
+
+{% block title %}
+{% if estilo %}
+{{ estilo.name }}
+{% else %}
+Escolas
+{% endif %}
+{% endblock title %}
+
+{% block content %}
+
+    {% for escola in escola_list %}
+    <section class='flex flex-col md:flex-row items-center border-gray-900 border-b-8' style="min-height: 70vh;">
+        <div class='md:w-4/12 flex justify-center items-center '>
+                <a href="{{ escola.get_absolute_url }}">
+                    {% if escola.image %}
+                    <img class="w-8/12" src="/media/{{escola.image}}" alt="">
+                    {% else %}
+                    <img class="w-8/12" src="{% static 'images/no_image.jpg' %}" alt="">
+                    {% endif %}
+                </a>
+            </div>
+
+            <div class="md:w-10/12 flex flex-col md:text-left p-5 md:p-10">
+                <a class="text-decoration-none text-dark" href="{{ escola.get_absolute_url }}">
+                    <h5 class="md:text-5xl text-4xl font-semibold mb-4">{{ escola.name }}</h5>
+                </a>
+                <a class="text-decoration-none text-dark" href="{{ escola.get_absolute_url }}">
+                    <p class="md:text-xl text-lg">Fundação: {{ escola.fundacao }}</p>
+                </a>
+        </div>
+    </section>
+    {% endfor %}        
+
+
+
+<footer class=" px-5 py-10 ">
+    <ul class="flex justify-between items-center">
+
+        <li>&copy; 2021</li>
+        <li> Feito com Python (Django)</li>
+        <li>M4N3</li>
+    </ul>
+</footer>
+
+{% endblock content %}

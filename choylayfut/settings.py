@@ -39,10 +39,18 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    # apps de terceiros
+    "debug_toolbar",
+    "widget_tweaks",
+    "crispy_forms",
+    "localflavor",      
+  
     # my apps
     'users.apps.UsersConfig',
-
-
+    'pages.apps.PagesConfig',
+    'escolas.apps.EscolasConfig',
+    'faixas.apps.FaixasConfig',
+    'caminhos.apps.CaminhosConfig',
 
 ]
 
@@ -54,6 +62,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    "debug_toolbar.middleware.DebugToolbarMiddleware",    
 ]
 
 ROOT_URLCONF = 'choylayfut.urls'
@@ -92,6 +101,7 @@ DATABASES = {
 }
 
 
+
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
 
@@ -120,6 +130,8 @@ TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 
+USE_L10N = True
+
 USE_TZ = True
 
 
@@ -139,3 +151,20 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 # User Model
 
 AUTH_USER_MODEL = "users.User"
+
+# Medias
+
+MEDIA_URL = "/media/"
+MEDIA_ROOT = BASE_DIR / "media"
+
+# django-debug
+
+import socket  # noqa
+
+hostname, _, ips = socket.gethostbyname_ex(socket.gethostname())
+INTERNAL_IPS = [ip[:-1] + "1" for ip in ips]
+
+
+# Crispy
+
+CRISPY_TEMPLATE_PACK = "bootstrap4"

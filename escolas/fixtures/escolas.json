@@ -1,0 +1,168 @@
+[
+    {
+        "model": "escolas.estilo",
+        "pk": 2,
+        "fields": {
+            "name": "ChoyLayFut",
+            "slug": "choylayfut"
+        }
+    },
+    {
+        "model": "escolas.estilo",
+        "pk": 3,
+        "fields": {
+            "name": "Louva-a-Deus",
+            "slug": "louva-a-deus"
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 3,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 2,
+            "name": "Kung Fu Leão Chinês",
+            "slug": "kung-fu-leao-chines",
+            "image": "leao.jpeg",
+            "description": "Escola de Kung Fu Leão Chinês",
+            "fundacao": "2017-05-26T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 4,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 3,
+            "name": "Instituto de Kung fu Shaolin",
+            "slug": "instituto-de-kung-fu-shaolin",
+            "image": "louva-deus.jpeg",
+            "description": "Escola Matriz - Representa a ITKFA no Brasil",
+            "fundacao": "1992-08-15T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 5,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 2,
+            "name": "Academia Choy Lay Fut de Kung Fu",
+            "slug": "academia-choy-lay-fut-de-kung-fu",
+            "image": "garca.jpeg",
+            "description": "ACADEMIA CHOY LAY FUT DE KUNG FU - SÃO PAULO",
+            "fundacao": "2002-01-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 6,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 2,
+            "name": "Impact Kung Fu Academy Cascavel",
+            "slug": "impact-kung-fu-academy-cascavel",
+            "image": "serpente.jpeg",
+            "description": "IMPACT KUNG FU ACADEMY CASCAVEL - MARINGÁ",
+            "fundacao": "2012-01-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 7,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 3,
+            "name": "Tao Kuan Kung Fu",
+            "slug": "tao-kuan-kung-fu",
+            "image": "tigre.jpeg",
+            "description": "TAO KUAN KUNG FU - FEIRA DE SANTANA - BAHIA",
+            "fundacao": "2010-07-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 8,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 2,
+            "name": "Associação TAN LAN Choy Lay Fut",
+            "slug": "associacao-tan-lan-choy-lay-fut",
+            "image": "dragao.jpeg",
+            "description": "ASSOCIAÇÃO TAN LAN CHOY LAY FUT - SÃO CAETANO",
+            "fundacao": "2015-11-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 9,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 3,
+            "name": "Núcleo de Kung Fu Shaolin",
+            "slug": "nucleo-kung-fu-shaolin",
+            "image": "boneco-madeira.jpeg",
+            "description": "NÚCLEO DE KUNG FU SHAOLIN - MOOCA",
+            "fundacao": "2015-11-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 10,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 2,
+            "name": "Punho da Pantera Kung Fu",
+            "slug": "punho-da-pantera-kung-fu",
+            "image": "wute-coragem.jpeg",
+            "description": "PUNHO DA PANTERA KUNG FU - CAMPINAS",
+            "fundacao": "2015-11-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 11,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 2,
+            "name": "Wushu Academia de Kung Fu",
+            "slug": "wushu-academia-de-kung-fu",
+            "image": "wute-cortesia.jpeg",
+            "description": "WUSHU ACADEMIA DE KUNG FU - CAMPINAS",
+            "fundacao": "2009-10-02T08:00:00.000Z",
+            "is_available": true
+        }
+    },
+    {
+        "model": "escolas.escola",
+        "pk": 12,
+        "fields": {
+            "inclusao": "2022-05-31T00:00:00.000Z",
+            "alteracao": "2022-05-31T00:00:00.000Z",
+            "estilo": 3,
+            "name": "Instituto Foshan de Kung Fu",
+            "slug": "instituto-foshan-de-kung-fu",
+            "image": "wute-honra.jpeg",
+            "description": "INSTITUTO FOSHAN DE KUNG FU - PAULINIA",
+            "fundacao": "2018-03-02T08:00:00.000Z",
+            "is_available": true
+        }
+    }
+]
